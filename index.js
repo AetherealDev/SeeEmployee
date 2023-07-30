@@ -1,14 +1,6 @@
 const inquirer = require('inquirer');
 const db = require('./db/connection');
 
-
-db.connect((err) => {
-    if (err) throw err;
-    console.log('connected as id ' + db.threadId);
-});
-
-
-
 // WHEN I start the application
 // THEN I am presented with the following options: view all departments, view all roles, view all employees, add a department, add a role, add an employee, and update an employee role
 const questions = [
@@ -28,11 +20,41 @@ const questions = [
     }];
 
 
+inquirer.prompt(questions)
+    .then((answers) => {
+        console.log(answers);
+        switch (answers.action) {
+            case 'View all departments':
+                viewAllDepartments();
+                break;
+            case 'View all roles':
+                viewAllRoles();
+                break;
+            case 'View all employees':
+                viewAllEmployees();
+                break;
+            case 'Add a department':
+                addDepartment();
+                break;
+            case 'Add a role':
+                addRole();
+                break;
+            case 'Add an employee':
+                addEmployee();
+                break;
+            case 'Update an employee role':
+                updateEmployeeRole();
+                break;
+        }
+    });
+
 
 // WHEN I choose to view all departments
 // THEN I am presented with a formatted table showing department names and department ids
 const viewAllDepartments = () => {
     console.log('View all departments');
+
+
 }
 
 // WHEN I choose to view all roles
