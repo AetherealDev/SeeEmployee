@@ -5,15 +5,17 @@ INSERT INTO department (id, name) VALUES
  (1, 'HR'),
  (2, 'Finance'),
  (3, 'Marketing'),
- (4, 'IT');
+ (4, 'IT'),
+ (5, 'Sales');
 
 -- Insert data into the 'role' table
 INSERT INTO role (id, title, salary, department_id) VALUES
- (1, 'HR Manager', 60000, 1),
- (2, 'Finance Analyst', 55000, 2),
- (3, 'Marketing Specialist', 50000, 3),
- (4, 'IT Developer', 65000, 4),
- (5, 'IT Manager', 70000, 4);
+ (1, 'HR Manager', 70000, 1),
+ (2, 'Accountant', 60000, 2),
+ (3, 'Marketing Manager', 80000, 3),
+ (4, 'IT Manager', 90000, 4),
+ (5, 'Sales Manager', 80000, 5),
+ (6, 'Salesperson', 50000, 5);
 
 -- Insert data into the 'employee' table
 INSERT INTO employee (id, first_name, last_name, role_id, manager_id) VALUES
