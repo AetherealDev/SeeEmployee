@@ -44,9 +44,6 @@ function handleAction(answers) {
             console.log("Goodbye!");
             return;
     }
-
-    // Ask the user again for their choice
-    inquirer.prompt(questions).then(handleAction);
 }
 
 // Start the loop by asking the first question
